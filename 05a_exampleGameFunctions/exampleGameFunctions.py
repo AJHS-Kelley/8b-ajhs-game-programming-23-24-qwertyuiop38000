@@ -1,11 +1,18 @@
-# Example Game Functions Projects, William Castengera, v0.1
+# Example Game Functions Projects, William Castengera, v0.2
 import random
 
-def functionOne():
-    pass
+character = input("Choose a character Ivan, Chad or Jim")
 
-def functionTwo(param1):
-    pass
+def criticalHit():
+    hit = random.randint(1, 20)
+    if hit == 20:
+        return True
+    else:
+        return False
+def damageDone(isCritical, character):
+    isCritical = criticalHit()
+    if isCritical == True and character == "Jim":
+        damage = random.randint()
 
 def functionThree(param1 = "default value"):
     pass
