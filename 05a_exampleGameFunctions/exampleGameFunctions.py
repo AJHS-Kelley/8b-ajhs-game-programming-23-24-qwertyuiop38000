@@ -1,8 +1,8 @@
-# Example Game Functions Projects, William Castengera, v0.2
+# Example Game Functions Projects, William Castengera, v0.4
 import random
 
 character = str(input("Choose a character Ivan, Chad or Jim"))
-enemyList = ['hobgoblin', 'hellhound', 'cobalt', 'orc', 'troglodyte', ]
+enemyList = ['hobgoblin', 'hellhound', 'cobalt', 'orc', 'troglodyte', 'wolf']
 def criticalHit():
     hit = random.randint(1, 20)
     if hit == 20:
@@ -25,10 +25,12 @@ def damageDone(isCrit, char):
         damage = random.randint(100, 150)
         return damage
 
-def functionThree(param1 = "default value"):
-    pass
+def enemyAppears():
+    enemyIndex = random.randint(0, len(enemyList) - 1)
+    enemyName = enemyList(enemyIndex)
 
 def functionfour(param1, param2, param3):
     pass
-damage = damageDone(isCritical, character)
-print(damage)
+#damage = damageDone(isCritical, character)
+#print(damage)
+enemyAppears()
