@@ -1,26 +1,20 @@
-# Example Game Functions Projects, William Castengera, v1.0
+# Example Game Functions Projects, William Castengera, v1.1
 import random
 
 character = str(input("Choose a character Ivan, Chad or Jim"))
-
 enemyList = {'city': 'rat,raven,Monkey Spider,dog,crocodile'.split(','),
  'swamp': 'ghast orc troll snake dragon'.split(), 
  'forest': 'leopard tiger panther centaur boar'.split(),
   'dungeon': 'goblin slime undead basilisk phoenix'.split()}
-
 secretNumber = 2.8
 secretNumber += 1
-
 def criticalHit():
-    # Determines if a hit does a critical amount of damage and it returns true or false
     hit = random.randint(1, 20)
     if hit == 20:
         return True
     else:
         return False
-
 def damageDone(isCrit, char):
-    # determines the amount of damage based on if it is a critical hit and the the character they chose. It returns the damage done
     if isCritical == True:
         if character == "Chad":
             damage = random.randint(250, 300)
@@ -36,7 +30,6 @@ def damageDone(isCrit, char):
         return damage
 
 def enemyAppears(place='tutorial',listName=enemyList):
-    # Picks a random enemy from their location for them to fight. It uses the list and place they chose
     if place == 'city':
         enemy = listName['city'][random.randint(1, len(listName['city']) - 1)]
         print(enemy)
@@ -55,14 +48,28 @@ def enemyAppears(place='tutorial',listName=enemyList):
         enemy = listName[keyPick][random.randint(1, len(listName[keyPick]) - 1)]
     return enemy
 
+    pass
+#damage = damageDone(isCritical, character)
+#print(damage)
+locationList = ["swamp", 'forest', 'city', 'dungeon']
+location = input("Where would you like to go?\nSwamp\nForest\nCity\nDungeon\n")
+location = location.lower()
+while location not in locationList:
+    print('that is not right choose again')
+    locationList = ["swamp", 'forest', 'city', 'dungeon']
+    location = input("Where would you like to go?\nSwamp\nForest\nCity\nDungeon\n")
+
+opponent = enemyAppears(location, enemyList)
+isCritical = criticalHit()
+dam = damageDone(isCritical, character)
 def fight(howHurty, badBoy):
-    # All the fight mechanics. It uses the damage calculation and the enemy chosen. It returns nothing
     playerHealth = 5000
     attack = 0
     enemyHealth = 500
     print('A wild  ' + badBoy + ' appeared!\n')
     print(f"Your health is {playerHealth}\nThe {badBoy}'s health is {enemyHealth}\n")
     haveAttacked = input('Type A to attack')
+    haveAttacked = haveAttacked.upper()
     while enemyHealth > 0:
         if attack == 3:
             enemyAttackDamage = random.randint(50, 100)
@@ -77,20 +84,9 @@ def fight(howHurty, badBoy):
             else:
                 print(enemyHealth)
                 haveAttacked = input('\nType A to attack')
+                haveAttacked = haveAttacked.upper()
         attack += 1
-
-locationList = ["swamp", 'forest', 'city', 'dungeon']
-location = input("Where would you like to go?\nSwamp\nForest\nCity\nDungeon\n")
-location = location.lower()
-
-while location not in locationList:
-    print('that is not right choose again')
-    locationList = ["swamp", 'forest', 'city', 'dungeon']
-    location = input("Where would you like to go?\nSwamp\nForest\nCity\nDungeon\n")
-
-opponent = enemyAppears(location, enemyList)
-isCritical = criticalHit()
-dam = damageDone(isCritical, character)
 fight(dam, opponent)
+
 
 print(f'your secret number is {secretNumber}')
