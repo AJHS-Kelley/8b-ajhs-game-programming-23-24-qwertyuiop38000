@@ -1,11 +1,11 @@
-# Example Game Functions Projects, William Castengera, v0.4
+# Example Game Functions Projects, William Castengera, v0.6
 import random
 
 character = str(input("Choose a character Ivan, Chad or Jim"))
 enemyList = {'city': 'rat,raven,Monkey Spider,dog,crocodile'.split(','),
  'swamp': 'ghast orc troll snake dragon'.split(), 
- 'forest': 'square rectangle triangle rhombus kite trapezoid pentagon hexagon octogon nonagon'.split(),
-  'dungeon': 'corn peas broccoli potatoe beef chicken carrot radish banana people'.split()}
+ 'forest': 'leopard tiger panther centaur boar'.split(),
+  'dungeon': 'goblin slime undead basilisk phoenix'.split()}
 secretNumber = 2.8
 secretNumber += 1
 def criticalHit():
@@ -14,7 +14,6 @@ def criticalHit():
         return True
     else:
         return False
-isCritical = criticalHit()
 def damageDone(isCrit, char):
     if isCritical == True:
         if character == "Chad":
@@ -32,18 +31,22 @@ def damageDone(isCrit, char):
 
 def enemyAppears(place='tutorial',listName=enemyList):
     if place == 'city':
-        pass
+        enemy = listName['city'][random.randint(1, len(listName['city']) - 1)]
+        print(enemy)
     elif place == 'swamp':
-        pass
+        enemy = listName['swamp'][random.randint(1, len(listName['swamp']) - 1)]
+        print(enemy)
     elif place == 'forest':
-        pass
+        enemy = listName['forest'][random.randint(1, len(listName['forest']) - 1)]
+        print(enemy)
     elif place == 'dungeon':
-        pass
+        enemy = listName['dungeon'][random.randint(1, len(listName['dungeon']) - 1)]
+        print(enemy)
     else:
-        index = random.randint(0, len(listName) - 1)
-        name = listName(index)
+        keyList = ['city', 'dungeon', 'swamp', 'forest']
+        keyPick = keyList[random.randint(1, len(keyList)-1)]
+        enemy = listName[keyPick][random.randint(1, len(listName[keyPick]) - 1)]
 
-def functionfour(param1, param2, param3):
     pass
 #damage = damageDone(isCritical, character)
 #print(damage)
@@ -54,4 +57,12 @@ while location not in locationList:
     print('that is not right choose again')
     locationList = ["swamp", 'forest', 'city', 'dungeon']
     location = input("Where would you like to go?\nSwamp\nForest\nCity\nDungeon\n")
+
+enemyAppears(location, enemyList)
+isCritical = criticalHit()
+dam = damageDone(isCritical, character)
+def fight():
+    pass
+
+
 print(f'Ps the secret number is {secretNumber}')
