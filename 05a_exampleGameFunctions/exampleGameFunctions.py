@@ -12,7 +12,7 @@ secretNumber = 2.8
 secretNumber += 1
 
 def criticalHit():
-    # Determines if a hit doe a critical amount of damage
+    # Determines if a hit does a critical amount of damage and it returns true or false
     hit = random.randint(1, 20)
     if hit == 20:
         return True
@@ -20,7 +20,7 @@ def criticalHit():
         return False
 
 def damageDone(isCrit, char):
-    # determines the amount of damage based on if it is a critical hit and the the character they chose
+    # determines the amount of damage based on if it is a critical hit and the the character they chose. It returns the damage done
     if isCritical == True:
         if character == "Chad":
             damage = random.randint(250, 300)
@@ -36,7 +36,7 @@ def damageDone(isCrit, char):
         return damage
 
 def enemyAppears(place='tutorial',listName=enemyList):
-    # Picks a random enemy from their location for them to fight
+    # Picks a random enemy from their location for them to fight. It uses the list and place they chose
     if place == 'city':
         enemy = listName['city'][random.randint(1, len(listName['city']) - 1)]
         print(enemy)
@@ -56,7 +56,7 @@ def enemyAppears(place='tutorial',listName=enemyList):
     return enemy
 
 def fight(howHurty, badBoy):
-    # All the fight mechanics
+    # All the fight mechanics. It uses the damage calculation and the enemy chosen. It returns nothing
     playerHealth = 5000
     attack = 0
     enemyHealth = 500
