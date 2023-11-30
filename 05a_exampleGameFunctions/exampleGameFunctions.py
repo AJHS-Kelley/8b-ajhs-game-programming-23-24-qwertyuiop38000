@@ -89,4 +89,7 @@ def fight(howHurty, badBoy):
 fight(dam, opponent)
 
 
-print(f'your secret number is {secretNumber}')
+print(f'your secret number is {secretNumber}') 
+
+
+# Code Review by Marcus Brunson
