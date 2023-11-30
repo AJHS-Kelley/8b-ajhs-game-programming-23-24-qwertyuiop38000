@@ -92,4 +92,4 @@ fight(dam, opponent)
 print(f'your secret number is {secretNumber}') 
 
 
-# Code Review by Marcus Brunson
+# Code Review BY Marcus Brunson
