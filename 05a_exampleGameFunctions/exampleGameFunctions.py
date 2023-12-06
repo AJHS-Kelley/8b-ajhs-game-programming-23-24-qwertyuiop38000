@@ -6,17 +6,19 @@ enemyList = {'city': 'rat,raven,Monkey Spider,dog,crocodile'.split(','),
  'swamp': 'ghast orc troll snake dragon'.split(), 
  'forest': 'leopard tiger panther centaur boar'.split(),
   'dungeon': 'goblin slime undead basilisk phoenix'.split()}
-secretNumber = 2.8
+secretNumber = 2.8 
 secretNumber += 1
+
 def criticalHit():
     hit = random.randint(1, 20)
     if hit == 20:
         return True
     else:
         return False
-def damageDone(isCrit, char):
+
+def damageDone(isCritical, character):    
     if isCritical == True:
-        if character == "Chad":
+        if character == "Chad" # or character == "Ivan": 
             damage = random.randint(250, 300)
             return damage
         elif character == "Ivan":
@@ -48,20 +50,7 @@ def enemyAppears(place='tutorial',listName=enemyList):
         enemy = listName[keyPick][random.randint(1, len(listName[keyPick]) - 1)]
     return enemy
 
-    pass
-#damage = damageDone(isCritical, character)
-#print(damage)
-locationList = ["swamp", 'forest', 'city', 'dungeon']
-location = input("Where would you like to go?\nSwamp\nForest\nCity\nDungeon\n")
-location = location.lower()
-while location not in locationList:
-    print('that is not right choose again')
-    locationList = ["swamp", 'forest', 'city', 'dungeon']
-    location = input("Where would you like to go?\nSwamp\nForest\nCity\nDungeon\n")
 
-opponent = enemyAppears(location, enemyList)
-isCritical = criticalHit()
-dam = damageDone(isCritical, character)
 def fight(howHurty, badBoy):
     playerHealth = 5000
     attack = 0
@@ -86,6 +75,22 @@ def fight(howHurty, badBoy):
                 haveAttacked = input('\nType A to attack')
                 haveAttacked = haveAttacked.upper()
         attack += 1
+    
+#damage = damageDone(isCritical, character)
+#print(damage)
+locationList = ['swamp', 'forest', 'city', 'dungeon']
+location = input("Where would you like to go?\nSwamp\nForest\nCity\nDungeon\n")
+location = location.lower()
+while location not in locationList:
+    print('that is not right choose again')
+    locationList = ['swamp', 'forest', 'city', 'dungeon']
+    location = input("Where would you like to go?\nSwamp\nForest\nCity\nDungeon\n")
+
+opponent = enemyAppears(location, enemyList)
+isCritical = criticalHit()
+dam = damageDone(isCritical, character)
+
+
 fight(dam, opponent)
 
 
