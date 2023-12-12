@@ -7,8 +7,12 @@ class Person:# Use PascalCase for ClassNames
         self.weight = weight
 
         # To string function --- how the object appears as a string
-        def __str__(self):
-            return f"Name: {self.name}\nThis person is {self.age} years old.\nThey weigh {self.weight} pounds.\n"
+    def __str__(self):
+        return f"Name: {self.name}\nThis person is {self.age} years old.\nThey weigh {self.weight} pounds.\n"
+
+    def classFunction():
+        print("this is an example class function\n")
+        print("It only works when called on an object of that class")
 
 
 
