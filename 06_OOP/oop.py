@@ -11,5 +11,22 @@ class Person:# Use PascalCase for ClassNames
             return f"Name: {self.name}\nThis person is {self.age} years old.\nThey weigh {self.weight} pounds.\n"
 
 
+
 person1 = Person("John D. Sugma", 74, 350)
+person2 = Person("John D. ligma", 76, 360)
 print(person1)
+print(person2)
+
+if person1.weight > person2.weight:
+    print(f"{person1.name} weighs more than {person2.name}\n")
+elif person1.weight == person2.weight:
+    print("Each person weighs the same.\n")
+else: 
+    print(f"{person2.name} weighs more than {person1.name}\n")
+
+if person1.age > person2.age:
+    print(f"{person1.name} is older than {person2.name}\n")
+elif person1.weight == person2.weight:
+    print("Each person is the same age.\n")
+else: 
+    print(f"{person2.name} is older than {person1.name}\n")
