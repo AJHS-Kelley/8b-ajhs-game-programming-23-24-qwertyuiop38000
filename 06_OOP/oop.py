@@ -1,10 +1,12 @@
-# Object-Oriented Programming, William Castengera, v0.1
+# Object-Oriented Programming, William Castengera, v0.5
 
 class Person:# Use PascalCase for ClassNames
     def __init__(self, name, age, weight):
         self.name = name
         self.age = age
         self.weight = weight
+        self.weakness = None
+        self.weakness = None
 
         # To string function --- how the object appears as a string
     def __str__(self):
@@ -47,4 +49,12 @@ print(person1.name)
 
 print(person1.name)
 del person1.name
-print(person1)
+#print(person1)
+
+# Deleting objects
+del person1
+
+# Adding properties to Objects
+person2.weakness = "kryptonite"
+print(person2)
+print(person2.weakness)
