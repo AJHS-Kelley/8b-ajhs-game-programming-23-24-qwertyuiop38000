@@ -25,7 +25,8 @@ person2 = Person("John D. ligma", 76, 360)
 
 # if person1.weight > person2.weight:
 #     print(f"{person1.name} weighs more than {person2.name}\n")
-# elif person1.weight == person2.weight:
+# elif person1.weight == person2.weight:7
+
 #     print("Each person weighs the same.\n")
 # else: 
 #     print(f"{person2.name} weighs more than {person1.name}\n")
