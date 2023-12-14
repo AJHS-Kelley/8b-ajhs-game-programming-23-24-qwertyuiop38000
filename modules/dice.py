@@ -28,3 +28,10 @@ def isDoubles(roll1, roll2):
         isDoubles = False
     return isDoubles
 
+def isExploding(roll, sizeDice):
+    if roll == sizeDice:
+        isExploding = True
+    else:
+        isExploding = False
+    return isExploding
+
