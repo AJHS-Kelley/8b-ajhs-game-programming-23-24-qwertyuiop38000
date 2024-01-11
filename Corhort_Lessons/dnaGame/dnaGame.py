@@ -1,4 +1,4 @@
-# DNA Replication Game, William Castengera, v0.2
+# DNA Replication Game, William Castengera, v0.3
 
 # Import Entire Modules -- Get the whole tool box.
 import  time, datetime 
@@ -23,5 +23,20 @@ def genDna() -> str:
     return dnaSequence
 
 dna = genDna()
-print(dna)
 
+def genRNA(dnaSequence: str) -> tuple:
+    rnaStart = time.time() # time.time() returns the number of seconds since 00:00:00 UTC Jan, 01, 1970
+    print(f"The DNA sequence is {dnaSequence}.\n")
+    print("You will generate the RNA sequence that would match.\n")
+    print("Please remember, in the RNA sequence U pairs with A from the DNA sequence.\n")
+    rnaStart = time.time() # time.time() returns the number of seconds since 00:00:00 UTC Jan, 01, 1970
+    rnaSequence = input("Please enter the matching RNA. Leave No spaces! then press enter. Be fast!\n").upper()
+    rnaStop = time.time()
+    rnaTime = rnaStop - rnaStart
+    return (rnaSequence, rnaTime)
+    # Tuples are ORDERED -- you can reference elements with the index
+    # Tuples are UNCHANGEABLE -- you cannot add, modify or delete elements are creating
+    # Tuples CAN have duplicate values.
+
+rna = genRNA(dna)
+print(rna)
