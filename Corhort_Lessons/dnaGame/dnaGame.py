@@ -1,5 +1,5 @@
 # DNA Replication Game, William Castengera, v0.3
-
+import os
 # Import Entire Modules -- Get the whole tool box.
 import  time, datetime 
 
@@ -52,9 +52,38 @@ def verifySequence(dnaSequence: str, rnaSequence: str) -> bool:
             isMatch = True
         else:
             print("No match womp womp")
-
     return isMatch
+
+def calcScore(rnaSequence: str, rnaTime: float) -> int:
+    score = 0
+    if rnaTime < 1.0:
+        score += 1000000
+    elif rnaTime < 5.0:
+        score += 900000
+    elif rnaTime < 15.0:
+        score += 100000
+    elif rnaTime < 25.0:
+        score += 50000
+    else:
+        score += 1
+
+    scoreMulti = 0.0
+    if len(rnaSequence) >= 30:
+        scoreMulti = 5.0
+    elif len(rnaSequence) >= 15:
+        scoreMulti = 2.5
+    elif len(rnaSequence) >= 5:
+        scoreMulti = 1.0
+    else:
+        scoreMulti = 0.001
+    score *= scoreMulti
+    return score
+
 
 dna = genDNA()
 rna = doTranscription(dna)
 print(verifySequence(dna, rna[0]))
+
+print(calcScore(rna[0], rna[1]))
+
+
