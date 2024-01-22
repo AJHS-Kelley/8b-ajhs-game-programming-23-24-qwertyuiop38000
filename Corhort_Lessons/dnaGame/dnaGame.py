@@ -5,7 +5,7 @@ import  time, datetime
 
 # Importing Specific Methods -- Get the specific tool
 from random import choice
-
+i = 0
 # Store the DNA Bases
 dnaBases = ["A", "T", "G", "C"]
 
@@ -22,13 +22,20 @@ def genDNA() -> str:
         basesGenerated += 1
     return dnaSequence
 
-def doTranscription(dnaSequence: str) -> tuple:
+def doTranscription(dnaSequence: str, i: int) -> tuple:
     rnaStart = time.time() # time.time() returns the number of seconds since 00:00:00 UTC Jan, 01, 1970
     print(f"The DNA sequence is {dnaSequence}.\n")
     print("You will generate the RNA sequence that would match.\n")
     print("Please remember, in the RNA sequence U pairs with A from the DNA sequence.\n")
     rnaStart = time.time() # time.time() returns the number of seconds since 00:00:00 UTC Jan, 01, 1970
-    rnaSequence = input("Please enter the matching RNA. Leave No spaces! then press enter. Be fast!\n").upper()
+    rnaSequence = input("Please enter the matching RNA. Please put spaces between each letter! then press enter. Be fast!\n").upper().split()
+    while len(rnaSequence) > i:
+        if rnaSequence[i] not in "AUCG":
+            print("you lose")
+            break
+        else:
+            i += 1
+            continue
     rnaStop = time.time()
     rnaTime = rnaStop - rnaStart
     return (rnaSequence, rnaTime)
@@ -101,7 +108,7 @@ def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) ->
 
 
 dna = genDNA()
-rna = doTranscription(dna)
+rna = doTranscription(dna, i)
 if verifySequence(dna, rna[0]):
     score = (calcScore(rna[0], rna[1]))
     saveScore(dna, rna[0], rna[1], score)
