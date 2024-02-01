@@ -18,7 +18,7 @@ def criticalHit():
 
 def damageDone(isCritical, character):    
     if isCritical == True:
-        if character == "Chad" # or character == "Ivan": 
+        if character == "Chad": # or character == "Ivan": 
             damage = random.randint(250, 300)
             return damage
         elif character == "Ivan":
