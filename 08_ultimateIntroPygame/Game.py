@@ -7,7 +7,8 @@ screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption('Runner')
 clock = pygame.time.Clock()
 
-test_surface = pygame.image.load('img/Downloads/OneDrive - Duval County Public Schools/8b-ajhs-game-programming-23-24-qwertyuiop38000/08_ultimateIntroPygame/Sky_Image.png')
+Sky_Surface = pygame.image.load('img/ultPygame/Sky_Image.png')
+Ground_Surface = pygame.image.load('img/ultPygame/Ground_Image.png')
 
 while True:
     for event in pygame.event.get():
@@ -15,7 +16,8 @@ while True:
             pygame.quit()
             exit()
 
-    screen.blit(test_surface, (0,0))
+    screen.blit(Sky_Surface, (0,0))
+    screen.blit(Ground_Surface, (0,300))
 
     pygame.display.update()
     clock.tick(60)
