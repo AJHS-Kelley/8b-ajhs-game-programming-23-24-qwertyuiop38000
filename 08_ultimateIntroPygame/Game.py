@@ -7,7 +7,7 @@ screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption('Runner')
 clock = pygame.time.Clock()
 
-Sky_Surface = pygame.image.load('img/ultPygame/Sky_Image.png')
+Sky_Surface = pygame.image.load('img/ultPygame/Sky_Image.jpg')
 Ground_Surface = pygame.image.load('img/ultPygame/Ground_Image.png')
 
 while True:
