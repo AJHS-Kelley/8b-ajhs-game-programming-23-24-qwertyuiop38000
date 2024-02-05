@@ -10,17 +10,25 @@ test_font = pygame.font.Font(None, 50)
 
 Sky_Surface = pygame.image.load('img/ultPygame/Sky_Image.jpg')
 Ground_Surface = pygame.image.load('img/ultPygame/Ground_Image.png')
-text_Surface = test_font.render('My game', False, 'Red')
+Text_Surface = test_font.render('My game', False, 'Black')
+Character_surface = pygame.image.load('img/ultPygame/Pacman_Image.png')
+Character_x_Position = 600
 
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-
+    Character_x_Position += 4
+    if Character_x_Position > 800:
+        Character_x_Position = 0
+    if Character_x_Position < 0:
+        Character_x_Position = 800
     screen.blit(Sky_Surface, (0,0))
     screen.blit(Ground_Surface, (0,311))
-    screen.blit(text_Surface, (350,100))
+    screen.blit(Text_Surface, (350,100))
+    screen.blit(Character_surface, (Character_x_Position,300))
+
 
     pygame.display.update()
     clock.tick(60)
