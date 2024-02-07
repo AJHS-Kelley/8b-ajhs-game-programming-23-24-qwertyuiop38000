@@ -8,10 +8,10 @@ pygame.display.set_caption('Runner')
 clock = pygame.time.Clock()
 test_font = pygame.font.Font(None, 50)
 
-Sky_Surface = pygame.image.load('img/ultPygame/Sky_Image.jpg')
-Ground_Surface = pygame.image.load('img/ultPygame/Ground_Image.png')
+Sky_Surface = pygame.image.load('img/ultPygame/Sky_Image.jpg').convert_alpha()
+Ground_Surface = pygame.image.load('img/ultPygame/Ground_Image.png').convert_alpha()
 Text_Surface = test_font.render('My game', False, 'Black')
-Character_surface = pygame.image.load('img/ultPygame/Pacman_Image.png')
+Character_surface = pygame.image.load('img/ultPygame/Pacman_Image.png').convert_alpha()
 Character_x_Position = 600
 
 while True:
