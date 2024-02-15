@@ -6,7 +6,7 @@ pygame.init()
 screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption('Runner')
 clock = pygame.time.Clock()
-test_font = pygame.font.Font(None, 50)
+test_font = pygame.font.Font('08_ultimateIntroPygame/ultPygame/font/Pixeltype.ttf', 50)
 
 Sky_Surface = pygame.image.load('img/ultPygame/Sky_Image.jpg').convert_alpha()
 Ground_Surface = pygame.image.load('img/ultPygame/Ground_Image.png').convert_alpha()
@@ -19,7 +19,7 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-    Character_x_Position += 4
+    Character_x_Position -= 4
     if Character_x_Position > 800:
         Character_x_Position = 0
     if Character_x_Position < 0:
