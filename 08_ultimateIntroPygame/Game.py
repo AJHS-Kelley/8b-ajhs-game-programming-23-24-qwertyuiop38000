@@ -13,6 +13,7 @@ Ground_Surface = pygame.image.load('img/ultPygame/Ground_Image.png').convert_alp
 Text_Surface = test_font.render('My game', False, 'Black')
 Character_surface = pygame.image.load('img/ultPygame/Pacman_Image.png').convert_alpha()
 Character_x_Position = 600
+player_surface = pygame.image.load
 
 while True:
     for event in pygame.event.get():
