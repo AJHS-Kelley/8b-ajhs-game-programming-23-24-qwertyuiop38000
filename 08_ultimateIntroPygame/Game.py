@@ -2,6 +2,9 @@
 import pygame
 from sys import exit
 
+# You are  a little behind, please get finished.  You may need to work outside of class to complete it on time. 
+
+
 pygame.init()
 screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption('Runner')
