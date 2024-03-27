@@ -11,3 +11,9 @@ Levels / Screens:
 Objectives / Enemies / Obstacles:
  -- The Objective is to finish the Maze as fast as possible
  -- Obstacles Would include dead ends and walls
+
+ Difficulty Changes:
+ -- More Paths
+
+ Controls:
+ -- WASD
