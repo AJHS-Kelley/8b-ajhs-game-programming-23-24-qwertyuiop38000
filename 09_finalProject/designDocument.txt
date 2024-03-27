@@ -1,0 +1,13 @@
+Game Genre / Type: Maze Game
+Theme: Cave Theme
+
+Win Condition: End of the Maze
+Loss Conditions: Take More than 5 Minutes
+
+Levels / Screens:
+ -- Easy Maze
+ -- Hard Maze
+
+Objectives / Enemies / Obstacles:
+ -- The Objective is to finish the Maze as fast as possible
+ -- Obstacles Would include dead ends and walls

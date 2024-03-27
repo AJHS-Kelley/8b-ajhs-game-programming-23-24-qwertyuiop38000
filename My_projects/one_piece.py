@@ -3,7 +3,7 @@ print("This calculator will tel you how long you've spent watching One Piece and
 Name = input("What is your name?\n")
 Char = input("What is your favorite crewmate of the Straw Hats? type the name as the crew calls them. For example, it wouldn't be roronoa zoro, it would be zoro as the crew calls him.\n")
 Char = Char.lower()
-if Char == "ussop":
+if Char == "usopp":
     exit
 elif Char == "nami":
     exit
@@ -52,5 +52,4 @@ time_minutes2 = time2%60
 time_hours2 = int(time2/60)
 time_days2 = int(time_hours2/24)
 time_hours2 = time_hours2 - time_days2 * 24
-print(f"you have {time_days2} days left, {time_hours2} hours left, and {time_minutes2} minutes left.")
-print(24 * 13)
+print(f"you have {time_days2} days, {time_hours2} hours, and {time_minutes2} minutes left.")
