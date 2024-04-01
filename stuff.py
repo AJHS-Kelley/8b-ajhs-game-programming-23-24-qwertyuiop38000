@@ -9,11 +9,28 @@ a = int(a)
 b = int(b)
 c = int(c)
 
-print(f"a: {a} b: {b} c: {c}")
+#print(f"a: {a} b: {b} c: {c}")
 if a >= b:
     a, b = b, a
 if b >= c:
     b, c = c, b
 if a >= b:
     a, b = b, a
-print(f"a: {a} b: {b} c: {c}")
+#print(f"a: {a} b: {b} c: {c}")
+
+order = input().upper()
+myString = ""
+
+for i in range(len(order)):
+    if order[i] == "A":
+        myString += str(a) + " "
+    elif order[i] == "B":
+        myString += str(b) + " "
+    else:
+        if i == range(len(order)):
+            myString += str(c)
+        else:
+            myString += str(c) + " "
+    i += 1
+print(myString)
+    
