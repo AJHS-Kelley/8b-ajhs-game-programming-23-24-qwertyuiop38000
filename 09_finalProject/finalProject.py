@@ -1,7 +1,7 @@
 # Final Project, William Castengera, v0.0
 import sys, random, pygame
 
-resolution = 1 # O = Low Resolution, 1 = High Resolution
+resolution = 0 # O = Low Resolution, 1 = High Resolution
 
 difficulty = int(input("Please choose a difficulty. Enter 1 for easy or 2 for hard.\n"))
 if difficulty == 1:
