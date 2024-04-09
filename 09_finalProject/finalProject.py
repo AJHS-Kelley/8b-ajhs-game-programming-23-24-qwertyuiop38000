@@ -4,7 +4,7 @@ import sys, random, pygame
 resolution = 0 # O = Low Resolution, 1 = High Resolution
 
 difficulty = int(input("Please choose a difficulty. Enter 1 for easy or 2 for hard.\n"))
-if difficulty == 1:
+if difficulty == 0:
     pygame.display.set_caption('Maze Of Doom -- Easy')
 else:
     pygame.display.set_caption('Maze Of Doom -- Hard')
