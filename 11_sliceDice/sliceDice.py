@@ -17,4 +17,6 @@ print(alphabet[12:])
 # Slice the Whole %#$#! Thing
 print(alphabet[:])
 
+# Negative Index Slicing
+print(alphabet[-4:-1])
 
