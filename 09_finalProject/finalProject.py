@@ -3,11 +3,9 @@ import sys, random, pygame
 
 resolution = 0 # O = Low Resolution, 1 = High Resolution
 
-difficulty = int(input("Please choose a difficulty. Enter 1 for easy or 2 for hard.\n"))
-if difficulty == 0:
-    pygame.display.set_caption('Maze Of Doom -- Easy')
-else:
-    pygame.display.set_caption('Maze Of Doom -- Hard')
+difficulty = 0
+difficulty_select = False
+pygame.display.set_caption('Maze Of Doom')
 pygame.init()
 clock = pygame.time.Clock()
 if resolution == 0:
@@ -23,8 +21,11 @@ Maze_Surface = pygame.image.load('img/imagesX_800x600.png').convert_alpha()
 character_surface = pygame.image.load('img/character.png').convert_alpha()
 test_surface = pygame.image.load('img/41509588-16212fda-721c-11e8-8650-dc1cdd619072.png').convert_alpha()
 game_active = False
-open_screen_surface = pygame.image.load('img/')
-
+open_screen_surface = pygame.image.load('img/Title-Background-Image_800x600.png')
+text_font = pygame.font.Font(None, 50)
+text_surface = text_font.render("Welcome to the Terrible Maze", False, 'Red')
+play_Button = pygame.image.load('img/play_button.png')
+play_Button_Rect =  play_Button.get_rect(center = (400,300))
 while True:
     character = character_surface.get_rect(topleft = (z,c))
     test_rect = test_surface.get_rect(topleft = (100,100))
@@ -32,7 +33,10 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-    if game_active:
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if play_Button_Rect.collidepoint(event.pos):
+                difficulty_select = True
+    if game_active and difficulty == 1:
         screen.blit(Maze_Surface, (0,0))
         screen.blit(character_surface, character)
         screen.blit(test_surface, test_rect)
@@ -67,6 +71,12 @@ while True:
         if keys[pygame.K_s] or keys[pygame.K_DOWN]:
             c += 5
     else:
-
+        if difficulty_select:
+            pass
+        else:
+            screen.blit(open_screen_surface, (0,0))
+            screen.blit(text_surface, (150,25))
+            screen.blit(play_Button, play_Button_Rect)
+        
     pygame.display.update()
     clock.tick(60)
