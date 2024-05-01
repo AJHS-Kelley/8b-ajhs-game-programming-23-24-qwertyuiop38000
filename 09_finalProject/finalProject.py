@@ -35,8 +35,8 @@ while True:
             exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
             if play_Button_Rect.collidepoint(event.pos):
-                difficulty_select = True
-    if game_active and difficulty == 1:
+                game_active = True
+    if game_active:
         screen.blit(Maze_Surface, (0,0))
         screen.blit(character_surface, character)
         screen.blit(test_surface, test_rect)
@@ -71,9 +71,6 @@ while True:
         if keys[pygame.K_s] or keys[pygame.K_DOWN]:
             c += 5
     else:
-        if difficulty_select:
-            pass
-        else:
             screen.blit(open_screen_surface, (0,0))
             screen.blit(text_surface, (150,25))
             screen.blit(play_Button, play_Button_Rect)
