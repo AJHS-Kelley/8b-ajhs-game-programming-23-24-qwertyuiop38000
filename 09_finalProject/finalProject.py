@@ -16,8 +16,8 @@ else:
     y = 1080
 screen = pygame.display.set_mode((x, y))
 z = 680
-c = 550
-Maze_Surface = pygame.image.load('img/imagesX_800x600.png').convert_alpha()
+c = 165
+Maze_Surface = pygame.image.load('img/shot01 (1).jpg').convert_alpha()
 character_surface = pygame.image.load('img/character.png').convert_alpha()
 test_surface = pygame.image.load('img/41509588-16212fda-721c-11e8-8650-dc1cdd619072.png').convert_alpha()
 game_active = False
@@ -33,9 +33,9 @@ easy_rect = easy_Choice.get_rect(center = (600,300))
 text_surface = text_font.render("Welcome to the Maze of Doom", False, 'Red')
 play_Button = pygame.image.load('img/play_button.png')
 play_Button_Rect =  play_Button.get_rect(center = (400,300))
+wall_rect2 = test_surface.get_rect(topleft = (-206,0))
 while True:
     character = character_surface.get_rect(topleft = (z,c))
-    test_rect = test_surface.get_rect(topleft = (100,100))
     wall_rect = test_surface.get_rect(bottomright = (673, 600))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -59,16 +59,9 @@ while True:
         if difficulty_select == True:
             screen.blit(Maze_Surface, (0,0))
             screen.blit(character_surface, character)
-            screen.blit(test_surface, test_rect)
             keys = pygame.key.get_pressed()
             if keys[pygame.K_w] or keys[pygame.K_UP]:
                 if (keys[pygame.K_w] or keys[pygame.K_UP]) and (keys[pygame.K_a] or keys[pygame.K_LEFT]):
-                    if character.colliderect(test_rect):
-                        z += 5
-                        continue
-                    else:
-                        c -= 5
-                        z -= 5
                     if character.colliderect(wall_rect):
                         z += 5
                         continue
@@ -82,26 +75,15 @@ while True:
                     else:
                         c -= 5
                         z += 5
-                elif character.colliderect(test_rect):
-                    c += 5
                 else:
                     c -= 5
             if keys[pygame.K_a] or keys[pygame.K_LEFT]:
-                if character.colliderect(test_rect):
-                    z += 5
-                    continue
-                elif character.colliderect(wall_rect):
+                if character.colliderect(wall_rect):
                     z += 5
                 else:
                     z -= 5
             if keys[pygame.K_d] or keys[pygame.K_RIGHT]:
-                if character.colliderect(test_rect):
-                    z -= 5
-                    continue
-                elif character.colliderect(test_rect):
-                    z -= 5
-                else:
-                    z += 5
+                z += 5
             if keys[pygame.K_s] or keys[pygame.K_DOWN]:
                 c += 5
         else:
